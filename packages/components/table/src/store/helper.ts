@@ -27,7 +27,7 @@ const InitialStateMap = {
     },
 }
 
-export function createSotre<T>(table: Table<T>, props: TableProps<T>) {
+export function createStore<T>(table: Table<T>, props: TableProps<T>) {
     if (!table) {
         throw new Error('table is required')
     }
