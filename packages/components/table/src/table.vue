@@ -1,4 +1,4 @@
-GpScrollbar<template>
+<template>
   <div
     ref="tableWrapper"
     :calss="[
