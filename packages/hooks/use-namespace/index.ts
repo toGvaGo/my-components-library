@@ -52,6 +52,10 @@ export const useNamespace = (
         element && modifier
             ? _bem(namespace.value, block, '', element, modifier)
             : ''
+    const bm = (blockSuffix?: string, modifer?: string) =>
+        blockSuffix && modifer
+            ? _bem(namespace.value, block, blockSuffix, '', modifer)
+            : ''
     const bem = (blockSuffix?: string, element?: string, modifier?: string) =>
         blockSuffix && element && modifier
             ? _bem(namespace.value, block, blockSuffix, element, modifier)
@@ -94,6 +98,7 @@ export const useNamespace = (
         m,
         be,
         em,
+        bm,
         bem,
         is,
         cssVar,

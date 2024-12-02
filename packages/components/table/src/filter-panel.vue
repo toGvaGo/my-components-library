@@ -1,5 +1,5 @@
 <template>
-  <el-tootilp
+  <gp-tootilp
     ref="tooltip"
     :visible="tooltipVisible"
     :offset="0"
@@ -86,7 +86,7 @@
         </gp-icon>
       </span>
     </template>
-  </el-tootilp>
+  </gp-tootilp>
 </template>
 
 <script lang="ts">
@@ -112,8 +112,8 @@ export default defineComponent({
   components: {
     GpCheckbox,
     GpCheckboxGroup,
-    ElScrollbar,
-    ElTooltip,
+    GpScrollbar,
+    GpTooltip,
     // GpIcon,
     ArrowDown,
     ArrowUp,

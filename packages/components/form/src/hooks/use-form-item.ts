@@ -28,7 +28,7 @@ export type IUserFormItemInputCommonProps = {
     ariaLabel?: string | number | boolean | Record<string, any>
 }
 
-export const useFOrmItemInputId = (
+export const useFormItemInputId = (
     props: Partial<IUserFormItemInputCommonProps>,
     {
         formItemContext,
