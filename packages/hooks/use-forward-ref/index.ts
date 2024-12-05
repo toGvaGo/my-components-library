@@ -1,3 +1,5 @@
+
+// @ts-nocheck
 import { provide } from 'vue'
 
 import type { InjectionKey, ObjectDirective, Ref } from 'vue'
@@ -9,13 +11,12 @@ export type ForwardRefInjectionContext = {
 }
 
 export const FORWARD_REF_INJECTION_KEY: InjectionKey<ForwardRefInjectionContext> =
-    Symbol('gpForwardRef')
+    Symbol('elForwardRef')
 
 export const useForwardRef = <T>(forwardRef: Ref<T | null>) => {
     const setForwardRef = (el: T) => {
         forwardRef.value = el
     }
-
     provide(FORWARD_REF_INJECTION_KEY, {
         setForwardRef,
     })

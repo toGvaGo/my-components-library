@@ -5,7 +5,6 @@ import GpPopperArrow from './src/arrow.vue'
 import GpPopperTrigger from './src/trigger.vue'
 import GpPopperContent from './src/content.vue'
 import type { SFCWithInstall } from '@/utils'
-import { deflate } from 'zlib'
 
 export { GpPopperArrow, GpPopperTrigger, GpPopperContent }
 
