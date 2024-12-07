@@ -163,7 +163,7 @@ provide(
     scrollbarElement: scrollbarRef,
     wrapElement: wrapRef,
   })
-);
+)
 
 onActivated(() => {
   if (wrapRef.value) {

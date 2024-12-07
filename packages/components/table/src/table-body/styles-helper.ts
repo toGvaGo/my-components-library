@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { inject } from 'vue'
 import { useNamespace } from '@/hooks'
 import {

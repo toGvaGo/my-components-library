@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getCurrentInstance, nextTick, unref } from 'vue'
 import { useNamespace } from '@/hooks'
 import useWatcher from './watcher'

@@ -22,7 +22,7 @@ export type NativePropType = ((...args: any) => any) | {
     new (...args: any): any;
 } | undefined | null;
 export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N;
-export type IfEpProp<T, Y, N> = T extends {
+export type IfGpProp<T, Y, N> = T extends {
     [gpPropKey]: true;
 } ? Y : N;
 export type GpProp<Type, Default, Required> = {
@@ -33,6 +33,6 @@ export type GpProp<Type, Default, Required> = {
 } & IfNever<Default, unknown, {
     readonly default: Default;
 }>;
-export type EpPropConvert<Input> = Input extends GpPropInput<infer Type, infer Value, infer Validator, any, infer Required> ? EpPropFinalized<Type, Value, Validator, Input['default'], Required> : never;
+export type GpPropConvert<Input> = Input extends GpPropInput<infer Type, infer Value, infer Validator, any, infer Required> ? EpPropFinalized<Type, Value, Validator, Input['default'], Required> : never;
 export type EpPropFinalized<Type, Value, Validator, Default, Required> = GpProp<GpPropMergeType<Type, Value, Validator>, UnknownToNever<Default>, Required>;
 export {};

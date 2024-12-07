@@ -156,7 +156,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     scrollTo: (options: ScrollToOptions | number, yCoord?: number) => void;
     setScrollLeft: (left?: number) => void;
     setScrollTop: (top?: number) => void;
-}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, ("select-all" | "select" | "expand-change" | "current-change" | "sort-change" | "filter-change" | "cell-mouse-enter" | "cell-mouse-leave" | "selection-change" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "header-dragend")[], "select-all" | "select" | "expand-change" | "current-change" | "sort-change" | "filter-change" | "cell-mouse-enter" | "cell-mouse-leave" | "selection-change" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "header-dragend", import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
+}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, ("select-all" | "select" | "expand-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend")[], "select-all" | "select" | "expand-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend", import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     data: {
         type: import('vue').PropType<import('./table/defaults').DefaultRow[]>;
         default: () => never[];
@@ -238,12 +238,9 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     onSelect?: ((...args: any[]) => any) | undefined;
     "onSelect-all"?: ((...args: any[]) => any) | undefined;
     "onExpand-change"?: ((...args: any[]) => any) | undefined;
-    "onCurrent-change"?: ((...args: any[]) => any) | undefined;
-    "onSort-change"?: ((...args: any[]) => any) | undefined;
-    "onFilter-change"?: ((...args: any[]) => any) | undefined;
+    "onSelection-change"?: ((...args: any[]) => any) | undefined;
     "onCell-mouse-enter"?: ((...args: any[]) => any) | undefined;
     "onCell-mouse-leave"?: ((...args: any[]) => any) | undefined;
-    "onSelection-change"?: ((...args: any[]) => any) | undefined;
     "onCell-contextmenu"?: ((...args: any[]) => any) | undefined;
     "onCell-click"?: ((...args: any[]) => any) | undefined;
     "onCell-dblclick"?: ((...args: any[]) => any) | undefined;
@@ -252,6 +249,9 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     "onRow-dblclick"?: ((...args: any[]) => any) | undefined;
     "onHeader-click"?: ((...args: any[]) => any) | undefined;
     "onHeader-contextmenu"?: ((...args: any[]) => any) | undefined;
+    "onSort-change"?: ((...args: any[]) => any) | undefined;
+    "onFilter-change"?: ((...args: any[]) => any) | undefined;
+    "onCurrent-change"?: ((...args: any[]) => any) | undefined;
     "onHeader-dragend"?: ((...args: any[]) => any) | undefined;
 }>, {
     size: any;
@@ -263,10 +263,10 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     className: string;
     treeProps: import('./table/defaults').TreeProps | undefined;
     stripe: boolean;
-    highlightCurrentRow: boolean;
     fit: boolean;
     showHeader: boolean;
     showSummary: boolean;
+    highlightCurrentRow: boolean;
     defaultExpandAll: boolean;
     selectOnIndeterminate: boolean;
     indent: number;

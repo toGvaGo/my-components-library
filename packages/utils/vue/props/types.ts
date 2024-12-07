@@ -54,7 +54,7 @@ export type NativePropType =
 export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
 
 
-export type IfEpProp<T, Y, N> = T extends { [gpPropKey]: true } ? Y : N
+export type IfGpProp<T, Y, N> = T extends { [gpPropKey]: true } ? Y : N
 
 export type GpProp<Type, Default, Required> = {
     readonly type: PropType<Type>
@@ -63,7 +63,7 @@ export type GpProp<Type, Default, Required> = {
     [gpPropKey]: true
 } & IfNever<Default, unknown, { readonly default: Default }>
 
-export type EpPropConvert<Input> = Input extends GpPropInput<
+export type GpPropConvert<Input> = Input extends GpPropInput<
     infer Type,
     infer Value,
     infer Validator,

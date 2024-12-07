@@ -5,10 +5,10 @@ import { hasOwn } from '../../objects'
 import type { PropType } from 'vue'
 import type {
     GpProp,
-    EpPropConvert,
+    GpPropConvert,
     GpPropInput,
     GpPropMergeType,
-    IfEpProp,
+    IfGpProp,
     IfNativePropType,
     NativePropType
 } from './types'
@@ -77,10 +77,10 @@ export const buildProps = <
 >(
     props: Props
 ): {
-        [K in keyof Props]: IfEpProp<
+        [K in keyof Props]: IfGpProp<
             Props[K],
             Props[K],
-            IfNativePropType<Props[K], Props[K], EpPropConvert<Props[K]>>
+            IfNativePropType<Props[K], Props[K], GpPropConvert<Props[K]>>
         >
     } =>
     fromPairs(
