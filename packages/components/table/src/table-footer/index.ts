@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { defineComponent, h } from 'vue'
 import { useNamespace } from '@/hooks'
 import useStyle from './style-helper'

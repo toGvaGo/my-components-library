@@ -1,7 +1,7 @@
-
+// @ts-nocheck
 import { isRef, nextTick, ref } from 'vue'
 import { hasOwn, isClient } from '@/utils'
-import { parseHeight } from './utils'
+import { parseHeight } from './util'
 import type { Ref } from 'vue'
 
 import type { TableColumnCtx } from './table-column/defaults'

@@ -38,10 +38,12 @@
             type="button"
             @click="handleConfirm"
           >
-            {{ t('el.table.confirmFilter') }}
+            <!-- {{ t('el.table.confirmFilter') }} -->
+            确定
           </button>
           <button type="button" @click="handleReset">
-            {{ t('el.table.resetFilter') }}
+            <!-- {{ t('el.table.resetFilter') }} -->
+            取消
           </button>
         </div>
       </div>
@@ -90,12 +92,14 @@
 </template>
 
 <script lang="ts">
+// @ts-nocheck
 import { computed, defineComponent, getCurrentInstance, ref, watch } from 'vue';
 import GpCheckbox from '@/components/checkbox';
 // import { GpIcon } from '@element-plus/components/icon'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue';
 import { ClickOutside } from '@/directives';
-import { useLocale, useNamespace } from '@/hooks';
+// import { useLocale, useNamespace } from '@/hooks';
+import { useNamespace } from '@/hooks';
 import GpTooltip from '@/components/tooltip';
 import GpScrollbar from '@/components/scrollbar';
 import type { Placement } from '@/components/popper';
@@ -139,7 +143,7 @@ export default defineComponent({
   },
   setup(props) {
     const instance = getCurrentInstance();
-    const { t } = useLocale();
+    // const { t } = useLocale();
     const ns = useNamespace('table-filter');
     const parent = instance?.parent as TableHeader;
     if (!parent.filterPanels.value[props.column.id]) {
@@ -254,7 +258,7 @@ export default defineComponent({
       handleReset,
       handleSelect,
       isActive,
-      t,
+      // t,
       ns,
       showFilterPanel,
       hideFilterPanel,

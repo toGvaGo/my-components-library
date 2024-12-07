@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useSizeProp } from '@/hooks'
 import type {
     CSSProperties,

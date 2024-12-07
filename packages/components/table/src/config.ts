@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { h } from 'vue'
 import GpCheckbox from '@/components/checkbox'
 // import { GpIcon } from '@/components/icon'

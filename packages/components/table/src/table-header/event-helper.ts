@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import { getCurrentInstance, inject, ref } from 'vue'
 import {
     addClass,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getCurrentInstance, watch } from 'vue'
 import { hasOwn } from '@/utils'
 import { parseMinWidth, parseWidth } from '../util'

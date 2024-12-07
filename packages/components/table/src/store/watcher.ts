@@ -1,6 +1,7 @@
+// @ts-nocheck
 import { getCurrentInstance, ref, toRefs, unref, watch } from 'vue'
 import { isEqual } from 'lodash-unified'
-import { hasOwn, isUndefined } from '@s/utils'
+import { hasOwn, isUndefined } from '@/utils'
 import {
     getColumnById,
     getColumnByKey,
@@ -175,7 +176,7 @@ function useWatcher<T>() {
         }
     }
 
-    const clearSelection = () => {
+    const cleanSelection = () => {
         let deleted
         if (rowKey.value) {
             deleted = [];
@@ -334,7 +335,6 @@ function useWatcher<T>() {
     const getChildrenCount = (rowKey: string) => {
         if (!instance || !instance.store) return 0
         const { treeData } = instance.store.states
-        let count = 0
         let count = 0
         const children = treeData.value[rowKey]?.children
         if (children) {

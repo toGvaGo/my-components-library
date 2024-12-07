@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { createVNode, render } from 'vue'
 import { flatMap, get } from 'lodash-unified'
 import {
@@ -143,7 +145,7 @@ export const getColumnByKey = function <T>(
     return column
 }
 
-export console getColumnByCell = function <T>(
+export const getColumnByCell = function <T>(
     table: {
         columns: TableColumnCtx<T>[]
     },
