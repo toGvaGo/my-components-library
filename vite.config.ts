@@ -15,7 +15,7 @@ export default defineConfig({
         //配置库的构建
         lib: {
             entry: 'src/index.ts',//入口文件，这个文件应该导出你的组件
-            name: 'MyComponentLibrary',//库的名称，打包后可用作全局和变量
+            name: 'Go-Paradox',//库的名称，打包后可用作全局和变量
             fileName: (format) => `my-component-library.${format}.js`//自定义输出文件名的函数
         },
         rollupOptions: {
