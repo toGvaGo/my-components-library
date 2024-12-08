@@ -1,3 +1,11 @@
-stories
-.storybook
+
 .husky
+.storybook
+internal
+stories
+.eslintrc.js
+.prettierrc
+.stylelintrc.json
+pnpm-lock.yaml
+vite.config.ts
+tsconfig.json
