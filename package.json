@@ -2,7 +2,8 @@
   "name": "go-paradox-vue",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/my-component-library.es.js-component-library.es.js",
+  "main": "dist/go-paradox-vue.es.js",
+  "types": "dist/go-paradox-vue.es.d.ts",
   "scripts": {
     "test": "vitest",
     "prepare": "husky",

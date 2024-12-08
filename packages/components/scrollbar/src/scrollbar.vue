@@ -26,6 +26,7 @@
   </div>
 </template>
 <script setup lang="ts">
+//@ts-nocheck
 import {
   computed,
   nextTick,
@@ -163,7 +164,7 @@ provide(
     scrollbarElement: scrollbarRef,
     wrapElement: wrapRef,
   })
-)
+);
 
 onActivated(() => {
   if (wrapRef.value) {

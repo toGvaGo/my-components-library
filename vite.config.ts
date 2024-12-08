@@ -22,7 +22,7 @@ export default defineConfig({
         lib: {
             entry: 'packages/components/index.ts',//入口文件，这个文件应该导出你的组件
             name: 'Go-Paradox-Vue',//库的名称，打包后可用作全局和变量
-            fileName: (format) => `my-component-library.${format}.js`,//自定义输出文件名的函数
+            fileName: (format) => `go-paradox-vue.${format}.js`,//自定义输出文件名的函数
             formats: ['es', 'cjs', 'umd']
         },
         rollupOptions: {

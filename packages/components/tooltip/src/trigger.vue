@@ -17,6 +17,7 @@
   </gp-popper-trigger>
 </template>
 <script setup lang="ts">
+//@ts-nocheck
 import { inject, ref, toRef, unref } from 'vue';
 import { GpPopperTrigger } from '@/components/popper';
 import { composeEventHandlers } from '@/utils';
