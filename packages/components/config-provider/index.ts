@@ -3,8 +3,8 @@ import { withInstall } from '@/utils'
 import ConfigProvider from './src/config-provider'
 import type { SFCWithInstall } from '@/utils';
 
-export const ElConfigProvider: SFCWithInstall<typeof ConfigProvider> = withInstall(ConfigProvider)
-export default ElConfigProvider
+export const GpConfigProvider: SFCWithInstall<typeof ConfigProvider> = withInstall(ConfigProvider)
+export default GpConfigProvider
 
 export * from './src/config-provider'
 export * from './src/config-provider-props'

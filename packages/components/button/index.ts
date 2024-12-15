@@ -8,8 +8,8 @@ import type { SFCWithInstall } from '@/utils'
 // } = withInstall(Button, {
 //     ButtonGroup
 // })
-export const ElButton: SFCWithInstall<typeof Button> = withInstall(Button);
-export default ElButton
+export const GpButton: SFCWithInstall<typeof Button> = withInstall(Button);
+export default GpButton
 
 export * from './src/button';
 export type { ButtonInstance } from './src/instance'

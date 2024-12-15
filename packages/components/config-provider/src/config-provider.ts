@@ -6,7 +6,7 @@ import type { MessageConfigContext } from '@/components/message'
 export const messageConfig: MessageConfigContext = {}
 
 const ConfigProvider = defineComponent({
-    name: 'ElConfigProvider',
+    name: 'GpConfigProvider',
     props: configProviderProps,
     setup(props, { slots }) {
         watch(
