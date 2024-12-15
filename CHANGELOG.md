@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/toGvaGo/my-components-library/compare/v1.0.2...v1.1.0) (2024-12-15)
+
+
+### Features
+
+* 添加组件样式 ([2a616e8](https://github.com/toGvaGo/my-components-library/commit/2a616e8b10bb476da83e071dd9b86833867f59b5))
+
+
+### Bug Fixes
+
+* 修改组件名称 ([5dcf08c](https://github.com/toGvaGo/my-components-library/commit/5dcf08c9daeb33f8d01ba3bedae9313015705fbc))
+
 ### 1.0.2 (2024-12-08)
 
 
