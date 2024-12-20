@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/toGvaGo/my-components-library/compare/v1.1.0...v1.1.1) (2024-12-20)
+
+
+### Bug Fixes
+
+* 尝试添加button样式 ([773973e](https://github.com/toGvaGo/my-components-library/commit/773973e35526b43edea347d53c87335113b6f02a))
+
 ## [1.1.0](https://github.com/toGvaGo/my-components-library/compare/v1.0.2...v1.1.0) (2024-12-15)
 
 
