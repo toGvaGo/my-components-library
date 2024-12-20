@@ -45,7 +45,7 @@ const buttonKls = computed(() => [
   ns.m(_type.value),
   ns.is('disabled', _disabled.value),
   ns.is('loading', props.loading),
-  ns.is('palin', props.palin),
+  ns.is('plain', props.plain),
   ns.is('round', props.round),
   ns.is('circle', props.circle),
   ns.is('text', props.text),
@@ -61,3 +61,7 @@ defineExpose({
   shouldAddSpace,
 });
 </script>
+
+<style lang="scss">
+@import '@/components/button/style/index.scss';
+</style>

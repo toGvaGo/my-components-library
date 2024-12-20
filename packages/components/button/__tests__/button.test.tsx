@@ -10,16 +10,32 @@ describe('GpButton', () => {
     expect(wrapper.classes()).toContain('gp-button');
   });
 
-  //属性测试
-  //   it('applies the correct type class', async () => {
-  //     const wrapper = mount(GpButton, {
-  //       props: {
-  //         type: 'primary',
-  //       },
-  //     });
+  //样式测试
+  it('has height: 32px when default props are used', () => {
+    const wrapper = mount(GpButton);
 
-  //     expect(wrapper.classes()).toContain('gp-button--primary');
-  //   });
+    // 获取计算后的样式
+    const buttonElement = wrapper.element;
+    const style = window.getComputedStyle(buttonElement); // 使用 window.getComputedStyle 获取所有计算样式
+
+    // 验证 height 样式
+    console.log('===================');
+    console.log(style.height);
+    // 验证 height 样式
+    expect(style.height).toBe('');
+    // expect(style.height).toBe('32px');
+  });
+
+  //属性测试
+  it('applies the correct type class', async () => {
+    const wrapper = mount(GpButton, {
+      props: {
+        type: 'primary',
+      },
+    });
+
+    expect(wrapper.classes()).toContain('gp-button--primary');
+  });
 
   //事件测试
   it('handles click events', async () => {

@@ -35,7 +35,7 @@ export const buttonProps = buildProps({
         type: iconPropType,
         default: () => 'Loading'
     },
-    palin: Boolean,
+    plain: Boolean,
     text: Boolean,
     link: Boolean,
     bg: Boolean,
