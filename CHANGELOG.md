@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/toGvaGo/my-components-library/compare/v1.1.1...v1.2.0) (2024-12-22)
+
+
+### Features
+
+* 添加样式打包流程 ([8c75184](https://github.com/toGvaGo/my-components-library/commit/8c75184014692bf960b34318e14814f82794f571))
+
 ### [1.1.1](https://github.com/toGvaGo/my-components-library/compare/v1.1.0...v1.1.1) (2024-12-20)
 
 

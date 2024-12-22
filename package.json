@@ -1,6 +1,6 @@
 {
   "name": "go-paradox-vue",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/go-paradox-vue.es.js",
   "types": "dist/go-paradox-vue.es.d.ts",
