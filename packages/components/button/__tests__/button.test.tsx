@@ -11,7 +11,7 @@ describe('GpButton', () => {
   });
 
   //样式测试
-  it('has height: 32px when default props are used', () => {
+  it('rubbish test', () => {
     const wrapper = mount(GpButton);
 
     // 获取计算后的样式
@@ -23,7 +23,6 @@ describe('GpButton', () => {
     console.log(style.height);
     // 验证 height 样式
     expect(style.height).toBe('');
-    // expect(style.height).toBe('32px');
   });
 
   //属性测试

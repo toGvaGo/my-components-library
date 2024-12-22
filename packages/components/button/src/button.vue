@@ -61,7 +61,3 @@ defineExpose({
   shouldAddSpace,
 });
 </script>
-
-<style lang="scss">
-@import '@/components/button/style/index.scss';
-</style>
