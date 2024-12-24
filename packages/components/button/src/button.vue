@@ -35,14 +35,13 @@ const emit = defineEmits(buttonEmits);
 
 const buttonStyle = useButtonCustomStyle(props);
 const ns = useNamespace('button');
-// const { _ref, _size, _type, _disabled, _props, shouldAddSpace, handelClick } =
-//   useButton(props, emit);
-const { _ref, _type, _disabled, _props, shouldAddSpace, handleClick } =
+const { _ref, _size, _type, _disabled, _props, shouldAddSpace, handleClick } =
   useButton(props, emit);
 
 const buttonKls = computed(() => [
   ns.b(),
   ns.m(_type.value),
+  ns.m(_size.value),
   ns.is('disabled', _disabled.value),
   ns.is('loading', props.loading),
   ns.is('plain', props.plain),
@@ -57,7 +56,7 @@ defineExpose({
   ref: _ref,
   type: _type,
   disabled: _disabled,
-  // size: _size,
+  size: _size,
   shouldAddSpace,
 });
 </script>

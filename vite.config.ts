@@ -54,9 +54,9 @@ export default defineConfig({
         cssCodeSplit: false,
 
     },
-    css: {
-        modules: {
-            exportGlobals: true
-        }
-    }
+    // css: {
+    //     modules: {
+    //         exportGlobals: true
+    //     }
+    // }
 })

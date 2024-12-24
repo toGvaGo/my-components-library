@@ -1,9 +1,9 @@
 import { Text, computed, inject, ref, useSlots } from 'vue'
-// import {
-//     useFormDisabled,
-//     useFormItem,
-//     useFormSize,
-// } from '@/components/form'
+import {
+    useFormDisabled,
+    useFormItem,
+    useFormSize,
+} from '@/components/form'
 import { useGlobalConfig } from '@/components/config-provider'
 import { useDeprecated } from '@/hooks'
 import { buttonGroupContextKey } from './constants'
@@ -29,10 +29,9 @@ export const useButton = (
 
     const buttonGroupContext = inject(buttonGroupContextKey, undefined)
     const globalConfig = useGlobalConfig('button');
-    // const { form } = useFormItem();
-    // const _size = useFormSize(computed(() => buttonGroupContext?.size))
-    // const _disabled = useFormDisabled();
-    const _disabled = ref(false);
+    const { form } = useFormItem();
+    const _size = useFormSize(computed(() => buttonGroupContext?.size))
+    const _disabled = useFormDisabled();
     const _ref = ref<HTMLButtonElement>();
     const slots = useSlots();
 
@@ -78,7 +77,7 @@ export const useButton = (
 
     return {
         _disabled,
-        // _size,
+        _size,
         _type,
         _ref,
         _props,

@@ -1,56 +1,114 @@
-import { fn } from '@storybook/test';
+import { expect, fn, userEvent, within } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import Button from './Button.vue';
+import Button from '../packages/components/button/src/button.vue';
+import '../packages/theme-chalk/src/index.scss'
+import { h } from 'vue';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
-  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    size: {
+      control: 'select',
+      options: ['default', 'large', 'small']
+    },
+    selectType: {
+      control: 'select',
+      options: ['default', 'primary', 'disabled']
+    },
     backgroundColor: { control: 'color' },
   },
   args: {
-    primary: false,
-    // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+    size: 'default',
+    type: 'default',
     onClick: fn(),
   },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  decorators: [
+    // 👇 Defining the decorator in the preview file applies it to all stories
+    (_, { parameters }) => {
+      // 👇 Make it configurable by reading from parameters
+      const { pageLayout } = parameters;
+      switch (pageLayout) {
+        case 'page':
+          // Your page layout is probably a little more complex than this ;)
+          return { template: '<div class="page-layout"><story/></div>' };
+        case 'page-mobile':
+          return { template: '<div class="page-mobile-layout"><story/></div>' };
+        default:
+          // In the default case, don't apply a layout
+          return { template: '<story/>' };
+      }
+    },
+  ],
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
 
-export const Secondary: Story = {
+export const Default: Story = {
   args: {
-    primary: false,
-    label: 'Button',
+    type: 'default',
   },
+  render: (args) => h(Button, {
+    ...args,
+    onClick: () => {
+      console.log('default')
+    }
+  }, { default: () => 'default' })
 };
+// export const Primary: Story = {
+//   args: {
+//     type: 'primary'
+//   },
+//   render: (args) => h(Button, {
+//     ...args,
+//     onClick: () => {
+//       console.log('primary')
+//     }
+//   }, { default: () => 'primary' })
+// };
+// export const Disabled: Story = {
+//   args: {
+//     type: 'disabled'
+//   },
+//   render: (args) => h(Button, {
+//     ...args,
+//     onClick: () => {
+//       console.log('disabled')
+//     }
+//   }, { default: () => 'disabled' })
+// };
+// export const Large: Story = {
+//   args: {
+//     size: 'large'
+//   },
+//   render: (args) => h(Button, {
+//     ...args,
+//     onClick: () => {
+//       console.log('large')
+//     }
+//   }, { default: () => 'large' })
+// };
 
-export const Large: Story = {
-  args: {
-    label: 'Button',
-    size: 'large',
-  },
-};
 
-export const Small: Story = {
-  args: {
-    label: 'Button',
-    size: 'small',
-  },
-};
+// export const fk: Story = {
+//   args: {
+//     label: 'FKFKFKFKF',
+//     size: 'small',
+//     backgroundColor: 'green',
+//   },
+//   play: async ({ canvasElement }: any) => {
+//     const canvas = within(canvasElement);
+//     const button = canvas.getByRole('button', { name: /FKFKFKFKF/i });
+//     await expect(button).toBeInTheDocument();
+//     await userEvent.click(button);
+//     // await expect(button).not.toBeInTheDocument();
+//   },
+// };
