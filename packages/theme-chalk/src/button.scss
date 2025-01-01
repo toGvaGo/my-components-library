@@ -1,90 +1,152 @@
 @use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
 
-// 定义常用的按钮样式变量
-$button-padding: 10px 20px;
-$border-radius: 4px;
-$font-size: 14px;
-$base-bg: #f0f0f0;
-$primary-bg: #007bff;
-$disabled-bg: #ccc;
-$disabled-color: #999;
-$hover-bg: color.adjust($primary-bg, $lightness: -10%); // 替代 darken
-$outline-color: $primary-bg;
-
-// 定义按钮的默认样式
-@mixin button-base($bg-color, $color, $border-color) {
-  padding: $button-padding;
-  font-size: $font-size;
-  border-radius: $border-radius;
-  background-color: $bg-color;
-  color: $color;
-  border: 1px solid $border-color;
-  text-align: center;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-
-  // 悬停状态
-  &:hover {
-    background-color: color.adjust($bg-color, $lightness: -10%); // 替代 lighten
-  }
-
-  // 禁用样式
-  &.gp-button--disabled {
-    background-color: $disabled-bg;
-    color: $disabled-color;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
+.gp-button {
+  padding: 8px 15px;
+  font-size: var(--gp-font-size-base);
+  border-radius: var(--gp-border-radius-base);
 }
 
-// 通用按钮样式
 .gp-button {
-  display: inline-block;
-  font-family: Arial, sans-serif;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--gp-button-text-color);
   text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--gp-button-font-weight);
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--gp-button-bg-color);
+  border: var(--gp-border);
+  border-color: var(--gp-button-border-color);
 
-  // 默认按钮
-  @include button-base($base-bg, #333, transparent);
-
-  // 根据不同的后缀，扩展样式
-  &.gp-button--primary {
-    @include button-base($primary-bg, white, $primary-bg);
-
-    &:hover {
-      background-color: $hover-bg;
+  &:hover {
+    color: var(--gp-button-hover-text-color);
+    border-color: var(--gp-button-hover-border-color);
+    background-color: var(--gp-button-hover-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --gp-button-hover-text-color: var(--gp-color-primary);
+    --gp-button-hover-bg-color: var(--gp-fill-color-blank);
+    --gp-button-hover-border-color: var(--gp-color-primary);
+  }
+  &.is-round {
+    border-radius: var(--gp-border-radius-round);
+  }
+  &.is-circle {
+    width: 32px;
+    border-radius: 50%;
+    padding: 8px;
+  }
+  &.is-link {
+    border-color: transparent;
+    color: var(--gp-button-text-color);
+    background: transparent;
+    padding: 2px;
+    height: auto;
+    &:not(.is-disabled):hover {
+      border-color: transparent;
+      background-color: transparent;
     }
   }
-
-  &.gp-button-outline {
-    @include button-base(transparent, $primary-bg, $outline-color);
-
-    &:hover {
-      background-color: $primary-bg;
-      color: white;
-    }
+  &.is-disabled {
+    color: var(--gp-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--gp-button-disabled-bg-color);
+    border-color: var(--gp-button-disabled-border-color);
   }
-
-  // 按钮大小
-  &.gp-button--small {
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-
-  &.gp-button--large {
-    padding: 15px 30px;
-    font-size: 16px;
-  }
-
-  // 带图标的按钮
-  &.gp-button-icon {
-    display: flex;
+  > span {
     align-items: center;
-    gap: 8px;
-
-    .icon {
-      font-size: 18px;
-    }
+    display: inline-flex;
   }
+}
+.gp-button {
+  --gp-button-font-weight: var(--gp-font-weight-primary);
+  --gp-button-border-color: var(--gp-border-color);
+  --gp-button-bg-color: var(--gp-fill-color-blank);
+  --gp-button-text-color: var(--gp-text-color-regular);
+  --gp-button-disabled-text-color: var(--gp-disabled-text-color);
+  --gp-button-disabled-bg-color: var(--gp-fill-color-blank);
+  --gp-button-disabled-border-color: var(--gp-border-color-light);
+  --gp-button-divide-border-color: rgba(255, 255, 255, 0.5);
+  --gp-button-hover-text-color: var(--gp-color-primary);
+  --gp-button-hover-bg-color: var(--gp-color-primary-light-9);
+  --gp-button-hover-border-color: var(--gp-color-primary-light-7);
+  --gp-button-active-text-color: var(--gp-button-hover-text-color);
+  --gp-button-active-border-color: var(--gp-color-primary);
+  --gp-button-active-bg-color: var(--gp-button-hover-bg-color);
+  --gp-button-outline-color: var(--gp-color-primary-light-5);
+  --gp-button-hover-link-text-color: var(--gp-text-color-secondary);
+  --gp-button-active-color: var(--gp-text-color-primary);
+}
+
+.gp-button--primary {
+  --gp-button-text-color: var(--gp-color-white);
+  --gp-button-bg-color: var(--gp-color-primary);
+  --gp-button-border-color: var(--gp-color-primary);
+  --gp-button-outline-color: var(--gp-color-primary-light-5);
+  --gp-button-active-color: var(--gp-color-primary-dark-2);
+  --gp-button-hover-text-color: var(--gp-color-white);
+  --gp-button-hover-link-text-color: var(--gp-color-primary-light-5);
+  --gp-button-hover-bg-color: var(--gp-color-primary-light-3);
+  --gp-button-hover-border-color: var(--gp-color-primary-light-3);
+  --gp-button-active-bg-color: var(--gp-color-primary-dark-2);
+  --gp-button-active-border-color: var(--gp-color-primary-dark-2);
+  --gp-button-disabled-text-color: var(--gp-color-white);
+  --gp-button-disabled-bg-color: var(--gp-color-primary-light-5);
+  --gp-button-disabled-border-color: var(--gp-color-primary-light-5);
+}
+.gp-button--info {
+  --gp-button-text-color: var(--gp-color-white);
+  --gp-button-bg-color: var(--gp-color-info);
+  --gp-button-border-color: var(--gp-color-info);
+  --gp-button-outline-color: var(--gp-color-info-light-5);
+  --gp-button-active-color: var(--gp-color-info-dark-2);
+  --gp-button-hover-text-color: var(--gp-color-white);
+  --gp-button-hover-link-text-color: var(--gp-color-info-light-5);
+  --gp-button-hover-bg-color: var(--gp-color-info-light-3);
+  --gp-button-hover-border-color: var(--gp-color-info-light-3);
+  --gp-button-active-bg-color: var(--gp-color-info-dark-2);
+  --gp-button-active-border-color: var(--gp-color-info-dark-2);
+  --gp-button-disabled-text-color: var(--gp-color-white);
+  --gp-button-disabled-bg-color: var(--gp-color-info-light-5);
+  --gp-button-disabled-border-color: var(--gp-color-info-light-5);
+}
+.gp-button--small {
+  --gp-button-size: 24px;
+  height: var(--gp-button-size);
+}
+.gp-button--small {
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--gp-border-radius-base) - 1px);
+}
+.gp-button--normal {
+  padding: 8px 15px;
+  font-size: var(--gp-font-size-base);
+  border-radius: var(--gp-border-radius-base);
+}
+.gp-button--large {
+  --gp-button-size: 40px;
+  height: var(--gp-button-size);
+}
+.gp-button--large {
+  padding: 12px 19px;
+  font-size: var(--gp-font-size-base);
+  border-radius: var(--gp-border-radius-base);
+}
+.gp-button__text--expand {
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
 }

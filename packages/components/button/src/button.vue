@@ -7,9 +7,9 @@
     :style="buttonStyle"
     @click="handleClick"
   >
-    <template v-if="loading">
+    <!-- <template v-if="loading">
       <slot v-if="$slots.loading" name="loading" />
-    </template>
+    </template> -->
     <span
       v-if="$slots.default"
       :class="{ [ns.em('text', 'expand')]: shouldAddSpace }"
@@ -54,8 +54,11 @@ const buttonKls = computed(() => [
 
 defineExpose({
   ref: _ref,
+  /** button type */
   type: _type,
+  /** button is disabled or not */
   disabled: _disabled,
+  /** button type */
   size: _size,
   shouldAddSpace,
 });
