@@ -1,0 +1,151 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-checkbox {
+  color: var(--gp-checkbox-text-color);
+  font-weight: var(--gp-checkbox-font-weight);
+  font-size: var(--gp-font-size-base);
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 30px;
+  height: var(--gp-checkbox-height, 32px);
+}
+
+.gp-checkbox__original {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  margin: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+.gp-checkbox.gp-checkbox--large .gp-checkbox__inner {
+  width: 14px;
+  height: 14px;
+}
+.gp-checkbox__input.is-checked .gp-checkbox__inner {
+  background-color: var(--gp-checkbox-checked-bg-color);
+  border-color: var(--gp-checkbox-checked-input-border-color);
+}
+.gp-checkbox__inner {
+  display: inline-block;
+  position: relative;
+  border: var(--gp-checkbox-input-border);
+  border-radius: var(--gp-checkbox-border-radius);
+  box-sizing: border-box;
+  width: var(--gp-checkbox-input-width);
+  height: var(--gp-checkbox-input-height);
+  background-color: var(--gp-checkbox-bg-color);
+  z-index: var(--gp-index-normal);
+  transition:
+    border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+    background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+    outline 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+}
+.gp-checkbox__input.is-checked .gp-checkbox__inner:after {
+  transform: rotate(45deg) scaleY(1);
+  border-color: var(--gp-checkbox-checked-icon-color);
+}
+.gp-checkbox__input.is-checked + .gp-checkbox__label {
+  color: var(--gp-checkbox-checked-text-color);
+}
+.gp-checkbox__inner:after {
+  box-sizing: content-box;
+  content: '';
+  border: 1px solid transparent;
+  border-left: 0;
+  border-top: 0;
+  height: 7px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg) scaleY(0);
+  width: 3px;
+  transition: transform 0.15s ease-in 0.05s;
+  transform-origin: center;
+}
+.gp-checkbox__input {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  position: relative;
+}
+.gp-checkbox__label {
+  display: inline-block;
+  padding-left: 8px;
+  line-height: 1;
+  font-size: var(--gp-checkbox-font-size);
+}
+.gp-checkbox.is-disabled {
+  cursor: not-allowed;
+}
+.gp-checkbox__input.is-indeterminate .gp-checkbox__inner:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: var(--gp-checkbox-checked-icon-color);
+  height: 2px;
+  transform: scale(0.5);
+  left: 0;
+  right: 0;
+  top: 5px;
+}
+.gp-checkbox__input.is-indeterminate .gp-checkbox__inner {
+  background-color: var(--gp-checkbox-checked-bg-color);
+  border-color: var(--gp-checkbox-checked-input-border-color);
+}
+.gp-checkbox.is-bordered {
+  padding: 0 15px 0 9px;
+  border-radius: var(--gp-border-radius-base);
+  border: var(--gp-border);
+  box-sizing: border-box;
+}
+.gp-checkbox.is-bordered.is-checked {
+  border-color: var(--gp-color-primary);
+}
+.gp-checkbox.gp-checkbox--large {
+  height: 40px;
+}
+.gp-checkbox.gp-checkbox--large .gp-checkbox__label {
+  font-size: 14px;
+}
+.gp-checkbox.gp-checkbox--small {
+  height: 24px;
+}
+.gp-checkbox.gp-checkbox--small .gp-checkbox__label {
+  font-size: 12px;
+}
+.gp-checkbox {
+  --gp-checkbox-font-size: 14px;
+  --gp-checkbox-font-weight: var(--gp-font-weight-primary);
+  --gp-checkbox-text-color: var(--gp-text-color-regular);
+  --gp-checkbox-input-height: 14px;
+  --gp-checkbox-input-width: 14px;
+  --gp-checkbox-border-radius: var(--gp-border-radius-small);
+  --gp-checkbox-bg-color: var(--gp-fill-color-blank);
+  --gp-checkbox-input-border: var(--gp-border);
+  --gp-checkbox-disabled-border-color: var(--gp-border-color);
+  --gp-checkbox-disabled-input-fill: var(--gp-fill-color-light);
+  --gp-checkbox-disabled-icon-color: var(--gp-text-color-placeholder);
+  --gp-checkbox-disabled-checked-input-fill: var(--gp-border-color-extra-light);
+  --gp-checkbox-disabled-checked-input-border-color: var(--gp-border-color);
+  --gp-checkbox-disabled-checked-icon-color: var(--gp-text-color-placeholder);
+  --gp-checkbox-checked-text-color: var(--gp-color-primary);
+  --gp-checkbox-checked-input-border-color: var(--gp-color-primary);
+  --gp-checkbox-checked-bg-color: var(--gp-color-primary);
+  --gp-checkbox-checked-icon-color: var(--gp-color-white);
+  --gp-checkbox-input-border-color-hover: var(--gp-color-primary);
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}

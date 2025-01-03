@@ -18,10 +18,6 @@ const meta = {
       control: { type: 'select', options: ['small', 'large'] },
       description: 'Button size',
     },
-    loading: {
-      control: 'boolean',
-      description: 'Whether the button is in a loading state',
-    },
     disabled: {
       control: 'boolean',
       description: 'Whether the button is disabled',
@@ -104,6 +100,17 @@ const Template = (args) => ({
     </GpButton>
   `,
 });
+export const Button = Template.bind({});
+Button.args = {
+  type: '',
+  size: '',
+  disabled: false,
+  plain: false,
+  round: false,
+  link: false,
+  'auto-insert-space': false,
+  default: 'Default',
+}
 export const ButtonType = (args) => ({
   components: { GpButton },
   setup() {
@@ -125,7 +132,6 @@ export const ButtonType = (args) => ({
 ButtonType.args = {
   type: '',
   size: '',
-  loading: false,
   disabled: false,
   plain: false,
   round: false,
@@ -165,7 +171,6 @@ export const ButtonSize = (args) => ({
 ButtonSize.args = {
   type: '',
   size: '',
-  loading: false,
   disabled: false,
   plain: false,
   round: false,
@@ -178,7 +183,6 @@ export const AutoInsertSpace = Template.bind({});
 AutoInsertSpace.args = {
   type: 'primary',
   size: '',
-  loading: false,
   disabled: false,
   plain: false,
   round: false,
