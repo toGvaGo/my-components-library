@@ -21,22 +21,12 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
-      <!-- <gp-badge
-      v-if="repeatNum > 1"
-      :value="repeatNum"
-      :type="badgeType"
-      :class="ns.e('badge')"
-    /> -->
-      <!-- <gp-icon v-if="iconComponent" :class="[ns.e('icon'), typeClass]">
-        <component :is="iconComponent" />
-      </gp-icon> -->
       <slot>
-        <p v-if="!dangerouslyUseHTMLString" :class="ns.e('content')"></p>
+        <p v-if="!dangerouslyUseHTMLString" :class="ns.e('content')">
+          {{ message }}
+        </p>
         <p v-else :class="ns.e('content')" v-html="message" />
       </slot>
-      <!-- <el-icon v-if="showClose" :class="ns.e('closeBtn')" @click.stop="close">
-        <Close />
-      </el-icon> -->
     </div>
   </transition>
 </template>
@@ -68,7 +58,7 @@ const props = defineProps(messageProps);
 defineEmits(messageEmits);
 
 const { ns, zIndex } = useGlobalComponentSettings('message');
-const { currentZIndex, nextZIndex } = zIndex
+const { currentZIndex, nextZIndex } = zIndex;
 
 const messageRef = ref<HTMLElement>();
 const visible = ref(false);
