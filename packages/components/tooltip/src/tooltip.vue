@@ -42,6 +42,7 @@
         <span v-if="rawContent" v-html="content" />
         <span v-else>{{ content }}</span>
       </slot>
+      <gp-popper-arrow v-if="showArrow" :arrow-offset="arrowOffset" />
     </gp-tooltip-content>
   </gp-popper>
 </template>

@@ -1,0 +1,53 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-popper.is-dark,
+.gp-popper.is-dark > .gp-popper__arrow:before {
+  background: var(--gp-text-color-primary);
+  border: 1px solid var(--gp-text-color-primary);
+}
+.gp-popper.is-dark {
+  color: var(--gp-bg-color);
+}
+.gp-popper {
+  --gp-popper-border-radius: var(--gp-popover-border-radius, 4px);
+  border-radius: var(--gp-popper-border-radius);
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 10px;
+  overflow-wrap: break-word;
+  padding: 5px 11px;
+  position: absolute;
+  visibility: visible;
+  z-index: 2000;
+}
+
+.gp-popper[data-popper-placement^='top'] > .gp-popper__arrow {
+  bottom: -5px;
+}
+.gp-popper[data-popper-placement^='bottom'] > .gp-popper__arrow {
+  top: -5px;
+}
+.gp-popper[data-popper-placement^='left'] > .gp-popper__arrow {
+  right: -5px;
+}
+.gp-popper[data-popper-placement^='right'] > .gp-popper__arrow {
+  left: -5px;
+}
+.gp-popper__arrow,
+.gp-popper__arrow:before {
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  z-index: -1;
+}
+
+.gp-popper.is-dark > .gp-popper__arrow:before {
+  right: 0;
+}
+.gp-popper__arrow:before {
+  background: var(--gp-text-color-primary);
+  box-sizing: border-box;
+  content: ' ';
+  transform: rotate(45deg);
+}
