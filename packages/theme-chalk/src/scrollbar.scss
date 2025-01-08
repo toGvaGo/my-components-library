@@ -1,0 +1,59 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-scrollbar__bar.is-vertical {
+  width: 6px;
+  top: 2px;
+}
+
+.gp-scrollbar__bar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 4px;
+}
+.gp-scrollbar__bar.is-vertical > div {
+  width: 100%;
+}
+.gp-scrollbar__thumb {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: var(
+    --gp-scrollbar-bg-color,
+    var(--gp-text-color-secondary)
+  );
+  transition: var(--gp-transition-duration) background-color;
+  opacity: var(--gp-scrollbar-opacity, 0.3);
+}
+
+.gp-scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.gp-scrollbar {
+  --gp-scrollbar-opacity: 0.3;
+  --gp-scrollbar-bg-color: var(--gp-text-color-secondary);
+  --gp-scrollbar-hover-opacity: 0.5;
+  --gp-scrollbar-hover-bg-color: var(--gp-text-color-secondary);
+}
+.gp-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+.gp-scrollbar__wrap {
+  overflow: auto;
+  height: 100%;
+}
+
+.gp-scrollbar__bar.is-horizontal {
+  height: 6px;
+  left: 2px;
+}
+.gp-scrollbar__bar.is-horizontal > div {
+  height: 100%;
+}
