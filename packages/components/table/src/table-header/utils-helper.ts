@@ -9,7 +9,7 @@ const getAllColumns = <T>(
 ): TableColumnCtx<T>[] => {
     const result: TableColumnCtx<T>[] = []
 
-    columns.forEach(() => {
+    columns.forEach((column) => {
         if (columns.children) {
             result.push(column)
             result.push.apply(result, getAllColumns(column.children))

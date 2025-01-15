@@ -246,7 +246,7 @@ class TableLayout<T> {
         observers.forEach((observer) => {
             switch (event) {
                 case 'columns':
-                    observer.state?.onColumnChange(this)
+                    observer.state?.onColumnsChange(this)
                     break;
                 case 'scrollable':
                     observer.state?.onScrollableChange(this)

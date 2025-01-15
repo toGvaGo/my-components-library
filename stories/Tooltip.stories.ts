@@ -136,29 +136,3 @@ Tooltip.parameters = {
     }
   }
 }
-
-export const contentSlot = (args) => ({
-
-  components: { GpTooltip, GpButton },
-  setup() {
-    return { args };
-  },
-  template: `
-  <gp-tooltip placement="top">
-    <template #content>content 1<br />content 2 </template>
-    <gp-button>Top center</gp-button>
-  </gp-tooltip>
-  `,
-
-})
-contentSlot.parameters = {
-  docs: {
-    source: {
-      code: `
-  <gp-tooltip placement="top">
-    <template #content>content 1<br />content 2 </template>
-    <gp-button>Top center</gp-button>
-  </gp-tooltip>`
-    }
-  }
-}

@@ -1,0 +1,188 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-table--fit {
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.gp-table {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: fit-content;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--gp-table-bg-color);
+  font-size: var(--gp-font-size-base);
+  color: var(--gp-table-text-color);
+  --gp-table-border-color: var(--gp-border-color-lighter);
+  --gp-table-border: 1px solid var(--gp-table-border-color);
+  --gp-table-text-color: var(--gp-text-color-regular);
+  --gp-table-header-text-color: var(--gp-text-color-secondary);
+  --gp-table-row-hover-bg-color: var(--gp-fill-color-light);
+  --gp-table-current-row-bg-color: var(--gp-color-primary-light-9);
+  --gp-table-header-bg-color: var(--gp-bg-color);
+  --gp-table-fixed-box-shadow: var(--gp-box-shadow-light);
+  --gp-table-bg-color: var(--gp-fill-color-blank);
+  --gp-table-tr-bg-color: var(--gp-bg-color);
+  --gp-table-expanded-cell-bg-color: var(--gp-fill-color-blank);
+  --gp-table-fixed-left-column: inset 10px 0 10px -10px rgba(0, 0, 0, 0.15);
+  --gp-table-fixed-right-column: inset -10px 0 10px -10px rgba(0, 0, 0, 0.15);
+  --gp-table-index: var(--gp-index-normal);
+}
+
+.gp-table__inner-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gp-table--fit .gp-table__inner-wrapper:before {
+  width: 100%;
+}
+
+.gp-table--border:after,
+.gp-table--border:before,
+.gp-table--border .gp-table__inner-wrapper:after,
+.gp-table__inner-wrapper:before {
+  content: '';
+  position: absolute;
+  background-color: var(--gp-table-border-color);
+  z-index: calc(var(--gp-table-index) + 2);
+}
+
+.gp-table__inner-wrapper:before {
+  left: 0;
+  bottom: 0;
+  height: 1px;
+}
+
+.gp-table .hidden-columns {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.gp-table__header-wrapper {
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.gp-table__header-wrapper,
+.gp-table__body-wrapper,
+.gp-table__footer-wrapper {
+  width: 100%;
+}
+
+.gp-table__header,
+.gp-table__body,
+.gp-table__footer {
+  table-layout: fixed;
+  border-collapse: separate;
+}
+
+.gp-table th.gp-table__cell.is-leaf,
+.gp-table td.gp-table__cell {
+  border-bottom: var(--gp-table-border);
+}
+
+.gp-table:not(.gp-table--border) .gp-table__cell {
+  border-right: none;
+}
+
+.gp-table th.gp-table__cell {
+  background-color: var(--gp-table-header-bg-color);
+}
+
+.gp-table .gp-table__cell {
+  padding: 8px 0;
+  min-width: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  z-index: var(--gp-table-index);
+}
+
+.gp-table thead th {
+  font-weight: 600;
+}
+
+.gp-table .cell {
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 23px;
+  padding: 0 12px;
+}
+
+.gp-table__body-wrapper {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.gp-scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  --gp-scrollbar-opacity: 0.3;
+  --gp-scrollbar-bg-color: var(--gp-text-color-secondary);
+  --gp-scrollbar-hover-opacity: 0.5;
+  --gp-scrollbar-hover-bg-color: var(--gp-text-color-secondary);
+}
+
+.gp-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+
+.gp-scrollbar__wrap {
+  overflow: auto;
+  height: 100%;
+}
+
+.gp-table tr {
+  background-color: var(--gp-table-tr-bg-color);
+}
+
+.gp-table--enable-row-transition .gp-table__body td.gp-table__cell {
+  transition: background-color 0.25s ease;
+}
+
+.gp-table--enable-row-hover .gp-table__body tr:hover > td.gp-table__cell {
+  background-color: var(--gp-table-row-hover-bg-color);
+}
+
+// 斑马条纹
+.gp-table--striped .gp-table__body tr.gp-table__row--striped td.gp-table__cell {
+  background: var(--gp-fill-color-lighter);
+}
+// 表格边框
+.gp-table--border:after {
+  top: -1px;
+  right: 0;
+  width: 1px;
+  height: 100%;
+}
+.gp-table__border-left-patch {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  z-index: calc(var(--gp-table-index) + 2);
+  position: absolute;
+  background-color: var(--gp-table-border-color);
+}
+.gp-table--border .gp-table__inner-wrapper:after {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  z-index: calc(var(--gp-table-index) + 2);
+}

@@ -22,6 +22,7 @@ export default defineComponent({
     name: 'GpTableBody',
     props: defaultProps,
     setup(props) {
+        console.log('props', props)
         const instance = getCurrentInstance()
         const parent = inject(TABLE_INJECTION_KEY)
         const ns = useNamespace('table')

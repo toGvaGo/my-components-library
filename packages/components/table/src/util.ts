@@ -17,7 +17,7 @@ import type { TableColumnCtx } from './table-column/defaults'
 
 export type TableOverflowTooltipOptions = Partial<
     Pick<
-        GpTooltipProps,
+        ElTooltipProps,
         | 'appendTo'
         | 'effect'
         | 'enterable'
@@ -35,7 +35,6 @@ export type TableOverflowTooltipOptions = Partial<
 type RemovePopperFn = (() => void) & {
     trigger?: HTMLElement
 }
-
 
 export const getCell = function (event: Event) {
     return (event.target as HTMLElement)?.closest('td')
@@ -94,20 +93,23 @@ export const orderBy = function <T>(
         }
         return 0
     }
-
-    return array.map((value, index) => {
-        return {
-            value,
-            index,
-            key: getKey ? getKey(value, index) : null,
-        }
-    }).sort((a, b) => {
-        let order = compare(a, b)
-        if (!order) {
-            order = a.index - b.index
-        }
-        return order * +reverse
-    }).map((item) => item.value)
+    return array
+        .map((value, index) => {
+            return {
+                value,
+                index,
+                key: getKey ? getKey(value, index) : null,
+            }
+        })
+        .sort((a, b) => {
+            let order = compare(a, b)
+            if (!order) {
+                // make stable https://en.wikipedia.org/wiki/Sorting_algorithm#Stability
+                order = a.index - b.index
+            }
+            return order * +reverse
+        })
+        .map((item) => item.value)
 }
 
 export const getColumnById = function <T>(
@@ -139,9 +141,8 @@ export const getColumnByKey = function <T>(
             break
         }
     }
-    if (!column) {
-        throwError(`No column matching with column-key: ${columnKey}`)
-    }
+    if (!column)
+        throwError('ElTable', `No column matching with column-key: ${columnKey}`)
     return column
 }
 
@@ -151,7 +152,7 @@ export const getColumnByCell = function <T>(
     },
     cell: HTMLElement,
     namespace: string
-): TableColumnCtx<T> | null {
+): null | TableColumnCtx<T> {
     const matches = (cell.className || '').match(
         new RegExp(`${namespace}-table_[^\\s]+`, 'gm')
     )
@@ -165,7 +166,7 @@ export const getRowIdentity = <T>(
     row: T,
     rowKey: string | ((row: T) => any)
 ): string => {
-    if (!row) throw new Error('row is required')
+    if (!row) throw new Error('Row is required when get row identity')
     if (typeof rowKey === 'string') {
         if (!rowKey.includes('.')) {
             return `${row[rowKey]}`
@@ -245,6 +246,7 @@ export function parseHeight(height: number | string) {
     return null
 }
 
+// https://github.com/reduxjs/redux/blob/master/src/compose.js
 export function compose(...funcs) {
     if (funcs.length === 0) {
         return (arg) => arg
@@ -360,7 +362,6 @@ export function walkTreeNode(
 }
 
 export let removePopper: RemovePopperFn | null = null
-
 
 export function createTablePopper(
     props: TableOverflowTooltipOptions,

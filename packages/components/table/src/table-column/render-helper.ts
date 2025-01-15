@@ -191,7 +191,7 @@ function useRender<T>(
             return pre
         }, {})
     }
-    const getColumnGpIndex = () => {
+    const getColumnElIndex = (children, child) => {
         return Array.prototype.indexOf.call(children, child)
     }
     const updateColumnOrder = () => {
@@ -208,7 +208,7 @@ function useRender<T>(
         setColumnForcedProps,
         setColumnRenders,
         getPropsData,
-        getColumnGpIndex,
+        getColumnElIndex,
         updateColumnOrder,
     }
 }

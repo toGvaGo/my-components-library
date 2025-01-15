@@ -54,7 +54,7 @@ function proxyTableProps(store: Store<T>, props: TableProps<T>) {
     })
 }
 
-function handleValue(value, key: string, store: Store<T>) {
+function handleValue(value, propsKey: string, store: Store<T>) {
     let newVal = value
     let storeKey = InitialStateMap[propsKey]
     if (typeof InitialStateMap[propsKey] === 'object') {

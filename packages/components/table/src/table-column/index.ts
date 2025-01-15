@@ -11,7 +11,7 @@ import {
     ref,
     render,
 } from 'vue'
-// import GpCheckbox from '@element-plus/components/checkbox'
+import GpCheckbox from '@/components/checkbox'
 import { isString, isUndefined } from '@/utils'
 import { cellStarts } from '../config'
 import { compose, mergeOptions } from '../util'
@@ -27,7 +27,7 @@ let columnIdSeed = 1
 export default defineComponent({
     name: 'GpTableColumn',
     components: {
-        // GpCheckbox,
+        GpCheckbox,
     },
     props: defaultProps,
     setup(props, { slots }) {
