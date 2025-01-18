@@ -35,7 +35,7 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     };
     readonly error: StringConstructor;
     readonly validateStatus: {
-        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "success" | "validating", unknown>>;
+        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "validating" | "success", unknown>>;
         readonly required: false;
         readonly validator: ((val: unknown) => boolean) | undefined;
         __gpPropKey: true;
@@ -52,7 +52,7 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
 }>, {
     size: import('vue').ComputedRef<"" | "small" | "default" | "large">;
     validateMessage: import('vue').Ref<string, string>;
-    validateState: import('vue').Ref<"" | "error" | "success" | "validating", "" | "error" | "success" | "validating">;
+    validateState: import('vue').Ref<"" | "error" | "validating" | "success", "" | "error" | "validating" | "success">;
     validate: (trigger: string, callback?: import('./types').FormValidateCallback) => import('./types').FormValidationResult;
     clearValidate: () => void;
     resetField: () => void;
@@ -75,7 +75,7 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     };
     readonly error: StringConstructor;
     readonly validateStatus: {
-        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "success" | "validating", unknown>>;
+        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "validating" | "success", unknown>>;
         readonly required: false;
         readonly validator: ((val: unknown) => boolean) | undefined;
         __gpPropKey: true;

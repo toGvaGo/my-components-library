@@ -1,7 +1,6 @@
-import { GpTooltipProps } from '../../tooltip';
 import { Table, TreeProps } from './table/defaults';
 import { TableColumnCtx } from './table-column/defaults';
-export type TableOverflowTooltipOptions = Partial<Pick<GpTooltipProps, 'appendTo' | 'effect' | 'enterable' | 'hideAfter' | 'offset' | 'placement' | 'popperClass' | 'popperOptions' | 'showAfter' | 'showArrow' | 'transition'>>;
+export type TableOverflowTooltipOptions = Partial<Pick<ElTooltipProps, 'appendTo' | 'effect' | 'enterable' | 'hideAfter' | 'offset' | 'placement' | 'popperClass' | 'popperOptions' | 'showAfter' | 'showArrow' | 'transition'>>;
 type RemovePopperFn = (() => void) & {
     trigger?: HTMLElement;
 };
@@ -15,7 +14,7 @@ export declare const getColumnByKey: <T>(table: {
 }, columnKey: string) => TableColumnCtx<T>;
 export declare const getColumnByCell: <T>(table: {
     columns: TableColumnCtx<T>[];
-}, cell: HTMLElement, namespace: string) => TableColumnCtx<T> | null;
+}, cell: HTMLElement, namespace: string) => null | TableColumnCtx<T>;
 export declare const getRowIdentity: <T>(row: T, rowKey: string | ((row: T) => any)) => string;
 export declare const getKeysMap: <T>(array: T[], rowKey: string) => Record<string, {
     row: T;

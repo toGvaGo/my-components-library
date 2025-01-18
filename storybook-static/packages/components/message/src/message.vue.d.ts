@@ -88,9 +88,6 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     center: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;
     icon: import('../../../utils').GpPropMergeType<(new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component) | (((new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component)) | null)[], unknown, unknown>;
     id: string;
-    customClass: string;
-    dangerouslyUseHTMLString: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;
-    duration: number;
     message: import('../../../utils').GpPropMergeType<(new (...args: any[]) => string | import('vue').VNode<import('vue').RendererNode, import('vue').RendererElement, {
         [key: string]: any;
     }> | (() => import('vue').VNode)) | (() => string | import('vue').VNode<import('vue').RendererNode, import('vue').RendererElement, {
@@ -100,6 +97,9 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     }> | (() => import('vue').VNode)) | (() => string | import('vue').VNode<import('vue').RendererNode, import('vue').RendererElement, {
         [key: string]: any;
     }> | (() => import('vue').VNode))) | null)[], unknown, unknown>;
+    duration: number;
+    customClass: string;
+    dangerouslyUseHTMLString: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;
     onClose: () => void;
     showClose: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;
     plain: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;

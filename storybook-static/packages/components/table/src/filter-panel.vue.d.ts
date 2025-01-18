@@ -66,8 +66,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -97,8 +97,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             readonly strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             readonly effect: string;
-            readonly role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             readonly trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            readonly role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             readonly arrowOffset: number;
             readonly virtualTriggering: boolean;
             readonly boundariesPadding: number;
@@ -120,7 +120,6 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly style?: import('vue').StyleValue;
             readonly ariaLabel?: string | undefined;
             readonly id?: string | undefined;
-            readonly appendTo?: import('../../../utils').GpPropMergeType<(new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement) | (((new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement)) | null)[], unknown, unknown> | undefined;
             readonly onFocus?: ((e: Event) => void) | undefined;
             readonly onBlur?: ((e: Event) => void) | undefined;
             readonly onKeydown?: ((e: Event) => void) | undefined;
@@ -128,6 +127,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly onContextmenu?: ((e: Event) => void) | undefined;
             readonly onMouseenter?: ((e: Event) => void) | undefined;
             readonly onMouseleave?: ((e: Event) => void) | undefined;
+            readonly appendTo?: import('../../../utils').GpPropMergeType<(new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement) | (((new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement)) | null)[], unknown, unknown> | undefined;
             readonly className?: (string | {
                 [x: string]: boolean;
             } | (string | {
@@ -183,7 +183,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly popperStyle?: import('vue').StyleValue;
             readonly referenceEl?: HTMLElement | undefined;
             readonly triggerTargetEl?: HTMLElement | undefined;
-        } & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps, "content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "role" | "trigger" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow">;
+        } & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps, "content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "trigger" | "role" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -667,8 +667,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -718,8 +718,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
         strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
         effect: string;
-        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         arrowOffset: number;
         virtualTriggering: boolean;
         boundariesPadding: number;
@@ -1054,7 +1054,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         autoClose: import('../../../utils').EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
         "onUpdate:visible": any;
         role: import('../../../utils').EpPropFinalized<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown, "tooltip", boolean>;
-    }>> & Readonly<{}>, "hide" | "onClose" | "contentRef" | "updatePopper" | "onOpen" | "popperRef" | "isFocusInsideContent" | ("content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "role" | "trigger" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow")> & import('vue').ShallowUnwrapRef<{
+    }>> & Readonly<{}>, "hide" | "onClose" | "contentRef" | "updatePopper" | "onOpen" | "popperRef" | "isFocusInsideContent" | ("content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "trigger" | "role" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow")> & import('vue').ShallowUnwrapRef<{
         popperRef: import('vue').Ref<({
             $: import('vue').ComponentInternalInstance;
             $data: {};
@@ -1214,8 +1214,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -1245,8 +1245,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             readonly strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             readonly effect: string;
-            readonly role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             readonly trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            readonly role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             readonly arrowOffset: number;
             readonly virtualTriggering: boolean;
             readonly boundariesPadding: number;
@@ -1268,7 +1268,6 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly style?: import('vue').StyleValue;
             readonly ariaLabel?: string | undefined;
             readonly id?: string | undefined;
-            readonly appendTo?: import('../../../utils').GpPropMergeType<(new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement) | (((new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement)) | null)[], unknown, unknown> | undefined;
             readonly onFocus?: ((e: Event) => void) | undefined;
             readonly onBlur?: ((e: Event) => void) | undefined;
             readonly onKeydown?: ((e: Event) => void) | undefined;
@@ -1276,6 +1275,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly onContextmenu?: ((e: Event) => void) | undefined;
             readonly onMouseenter?: ((e: Event) => void) | undefined;
             readonly onMouseleave?: ((e: Event) => void) | undefined;
+            readonly appendTo?: import('../../../utils').GpPropMergeType<(new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement) | (((new (...args: any[]) => string | HTMLElement) | (() => string | HTMLElement)) | null)[], unknown, unknown> | undefined;
             readonly className?: (string | {
                 [x: string]: boolean;
             } | (string | {
@@ -1331,7 +1331,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             readonly popperStyle?: import('vue').StyleValue;
             readonly referenceEl?: HTMLElement | undefined;
             readonly triggerTargetEl?: HTMLElement | undefined;
-        } & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps, "content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "role" | "trigger" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow">;
+        } & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps, "content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "trigger" | "role" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -1815,8 +1815,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -1866,8 +1866,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
         strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
         effect: string;
-        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         arrowOffset: number;
         virtualTriggering: boolean;
         boundariesPadding: number;
@@ -2202,7 +2202,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         autoClose: import('../../../utils').EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
         "onUpdate:visible": any;
         role: import('../../../utils').EpPropFinalized<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown, "tooltip", boolean>;
-    }>> & Readonly<{}>, "hide" | "onClose" | "contentRef" | "updatePopper" | "onOpen" | "popperRef" | "isFocusInsideContent" | ("content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "role" | "trigger" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow")> & import('vue').ShallowUnwrapRef<{
+    }>> & Readonly<{}>, "hide" | "onClose" | "contentRef" | "updatePopper" | "onOpen" | "popperRef" | "isFocusInsideContent" | ("content" | "offset" | "visible" | "open" | "disabled" | "showAfter" | "hideAfter" | "autoClose" | "placement" | "strategy" | "effect" | "trigger" | "role" | "arrowOffset" | "virtualTriggering" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "pure" | "triggerKeys" | "teleported" | "rawContent" | "persistent" | "onUpdate:visible" | "showArrow")> & import('vue').ShallowUnwrapRef<{
         popperRef: import('vue').Ref<({
             $: import('vue').ComponentInternalInstance;
             $data: {};
@@ -3325,8 +3325,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -3820,8 +3820,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
             placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
             strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
             effect: string;
-            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+            role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
             arrowOffset: number;
             virtualTriggering: boolean;
             boundariesPadding: number;
@@ -4312,8 +4312,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         placement: import('../../../utils').GpPropMergeType<StringConstructor, Placement, unknown>;
         strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
         effect: string;
-        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('../../tooltip').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('../../tooltip').TooltipTriggerType>)) | null)[], unknown, unknown>;
+        role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
         arrowOffset: number;
         virtualTriggering: boolean;
         boundariesPadding: number;

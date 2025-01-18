@@ -1,6 +1,5 @@
 declare function __VLS_template(): {
     slots: {
-        loading?(_: {}): any;
         default?(_: {}): any;
     };
     refs: {
@@ -35,8 +34,12 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     readonly tag: import('../../../utils').EpPropFinalized<(new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component) | (((new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component)) | null)[], unknown, unknown, "button", boolean>;
 }>, {
     ref: import('vue').Ref<HTMLButtonElement | undefined, HTMLButtonElement | undefined>;
+    /** button type */
     type: import('vue').ComputedRef<"" | "default" | "success" | "warning" | "info" | "primary" | "danger">;
-    disabled: import('vue').Ref<boolean, boolean>;
+    /** button is disabled or not */
+    disabled: import('vue').ComputedRef<boolean>;
+    /** button type */
+    size: import('vue').ComputedRef<"" | "small" | "default" | "large">;
     shouldAddSpace: import('vue').ComputedRef<boolean>;
 }, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     click: (evt: MouseEvent) => void;
@@ -75,11 +78,11 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     readonly text: boolean;
     readonly circle: boolean;
     readonly disabled: boolean;
+    readonly tag: import('../../../utils').GpPropMergeType<(new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component) | (((new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component)) | null)[], unknown, unknown>;
     readonly plain: boolean;
     readonly nativeType: import('../../../utils').GpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
     readonly loadingIcon: import('../../../utils').GpPropMergeType<(new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component) | (((new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component)) | null)[], unknown, unknown>;
     readonly autoInsertSpace: import('../../../utils').GpPropMergeType<BooleanConstructor, unknown, unknown>;
-    readonly tag: import('../../../utils').GpPropMergeType<(new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component) | (((new (...args: any[]) => (string | import('vue').Component) & {}) | (() => string | import('vue').Component)) | null)[], unknown, unknown>;
     readonly loading: boolean;
     readonly bg: boolean;
     readonly autofocus: boolean;

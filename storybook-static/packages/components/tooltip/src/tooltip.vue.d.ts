@@ -1587,8 +1587,8 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     placement: import('../../../utils').GpPropMergeType<StringConstructor, import('../../popper').Placement, unknown>;
     strategy: import('../../../utils').GpPropMergeType<StringConstructor, "fixed" | "absolute", unknown>;
     effect: string;
-    role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
     trigger: import('../../../utils').GpPropMergeType<(new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('./trigger').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('./trigger').TooltipTriggerType>) | (((new (...args: any[]) => "click" | "contextmenu" | "focus" | "hover" | import('./trigger').TooltipTriggerType[]) | (() => import('../../../utils').Arrayable<import('./trigger').TooltipTriggerType>)) | null)[], unknown, unknown>;
+    role: import('../../../utils').GpPropMergeType<StringConstructor, "grid" | "listbox" | "menu" | "tooltip" | "dialog" | "group" | "navigation" | "tree", unknown>;
     arrowOffset: number;
     virtualTriggering: boolean;
     boundariesPadding: number;

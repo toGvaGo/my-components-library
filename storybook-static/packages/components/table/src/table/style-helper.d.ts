@@ -8,11 +8,14 @@ declare function useStyle<T>(props: TableProps<T>, layout: TableLayout<T>, store
     isGroup: import('vue').Ref<boolean, boolean>;
     handleMouseLeave: () => void;
     handleHeaderFooterMousewheel: (event: any, data: any) => void;
-    tableSize: any;
-    emptyBlockStyle: any;
+    tableSize: import('vue').ComputedRef<"" | "small" | "default" | "large">;
+    emptyBlockStyle: import('vue').ComputedRef<{
+        width: string;
+        height: string;
+    } | null>;
     handleFixedMousewheel: (event: any, data: any) => void;
     resizeProxyVisible: import('vue').Ref<boolean, boolean>;
-    bodyWidth: any;
+    bodyWidth: import('vue').ComputedRef<string>;
     resizeState: import('vue').Ref<{
         width: null | number;
         height: null | number;
@@ -30,12 +33,30 @@ declare function useStyle<T>(props: TableProps<T>, layout: TableLayout<T>, store
     tableBodyStyles: import('vue').ComputedRef<{
         width: string;
     }>;
-    tableLayout: any;
+    tableLayout: import('vue').ComputedRef<("fixed" | "auto") | undefined>;
     scrollbarViewStyle: {
         display: string;
         verticalAlign: string;
     };
-    tableInnerStyle: any;
-    scrollbarStyle: any;
+    tableInnerStyle: import('vue').ComputedRef<{
+        height: string | number;
+        maxHeight?: undefined;
+    } | {
+        maxHeight: string | number;
+        height?: undefined;
+    } | {
+        height?: undefined;
+        maxHeight?: undefined;
+    }>;
+    scrollbarStyle: import('vue').ComputedRef<{
+        height: string;
+        maxHeight?: undefined;
+    } | {
+        maxHeight: string;
+        height?: undefined;
+    } | {
+        height?: undefined;
+        maxHeight?: undefined;
+    }>;
 };
 export default useStyle;

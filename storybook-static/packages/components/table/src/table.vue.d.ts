@@ -104,7 +104,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     handleHeaderFooterMousewheel: (event: any, data: any) => void;
     handleMouseLeave: () => void;
     tableId: string;
-    tableSize: any;
+    tableSize: import('vue').ComputedRef<"" | "small" | "default" | "large">;
     isHidden: import('vue').Ref<boolean, boolean>;
     isEmpty: import('vue').ComputedRef<boolean>;
     renderExpanded: import('vue').Ref<null, null>;
@@ -123,11 +123,14 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         headerHeight: null | number;
     }>;
     isGroup: import('vue').Ref<boolean, boolean>;
-    bodyWidth: any;
+    bodyWidth: import('vue').ComputedRef<string>;
     tableBodyStyles: import('vue').ComputedRef<{
         width: string;
     }>;
-    emptyBlockStyle: any;
+    emptyBlockStyle: import('vue').ComputedRef<{
+        width: string;
+        height: string;
+    } | null>;
     debouncedUpdateLayout: import('lodash-unified').DebouncedFunc<() => void>;
     handleFixedMousewheel: (event: any, data: any) => void;
     setCurrentRow: (row: any) => void;
@@ -145,18 +148,36 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     context: Table<any>;
     computedSumText: import('vue').ComputedRef<string>;
     computedEmptyText: import('vue').ComputedRef<string>;
-    tableLayout: any;
+    tableLayout: import('vue').ComputedRef<("fixed" | "auto") | undefined>;
     scrollbarViewStyle: {
         display: string;
         verticalAlign: string;
     };
-    tableInnerStyle: any;
-    scrollbarStyle: any;
+    tableInnerStyle: import('vue').ComputedRef<{
+        height: string | number;
+        maxHeight?: undefined;
+    } | {
+        maxHeight: string | number;
+        height?: undefined;
+    } | {
+        height?: undefined;
+        maxHeight?: undefined;
+    }>;
+    scrollbarStyle: import('vue').ComputedRef<{
+        height: string;
+        maxHeight?: undefined;
+    } | {
+        maxHeight: string;
+        height?: undefined;
+    } | {
+        height?: undefined;
+        maxHeight?: undefined;
+    }>;
     scrollBarRef: import('vue').Ref<any, any>;
     scrollTo: (options: ScrollToOptions | number, yCoord?: number) => void;
     setScrollLeft: (left?: number) => void;
     setScrollTop: (top?: number) => void;
-}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, ("select-all" | "select" | "expand-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend")[], "select-all" | "select" | "expand-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend", import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
+}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, ("select-all" | "select" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend" | "expand-change")[], "select-all" | "select" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "current-change" | "header-dragend" | "expand-change", import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     data: {
         type: import('vue').PropType<import('./table/defaults').DefaultRow[]>;
         default: () => never[];
@@ -237,7 +258,6 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
 }>> & Readonly<{
     onSelect?: ((...args: any[]) => any) | undefined;
     "onSelect-all"?: ((...args: any[]) => any) | undefined;
-    "onExpand-change"?: ((...args: any[]) => any) | undefined;
     "onSelection-change"?: ((...args: any[]) => any) | undefined;
     "onCell-mouse-enter"?: ((...args: any[]) => any) | undefined;
     "onCell-mouse-leave"?: ((...args: any[]) => any) | undefined;
@@ -253,6 +273,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     "onFilter-change"?: ((...args: any[]) => any) | undefined;
     "onCurrent-change"?: ((...args: any[]) => any) | undefined;
     "onHeader-dragend"?: ((...args: any[]) => any) | undefined;
+    "onExpand-change"?: ((...args: any[]) => any) | undefined;
 }>, {
     size: any;
     tableLayout: "fixed" | "auto";

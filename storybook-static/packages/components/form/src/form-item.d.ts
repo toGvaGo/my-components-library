@@ -23,7 +23,7 @@ export declare const formItemProps: {
     };
     readonly error: StringConstructor;
     readonly validateStatus: {
-        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "success" | "validating", unknown>>;
+        readonly type: import('vue').PropType<import('../../../utils').GpPropMergeType<StringConstructor, "" | "error" | "validating" | "success", unknown>>;
         readonly required: false;
         readonly validator: ((val: unknown) => boolean) | undefined;
         __gpPropKey: true;

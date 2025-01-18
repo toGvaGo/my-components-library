@@ -10,7 +10,7 @@ declare function useRender<T>(props: TableColumnCtx<T>, slots: any, owner: Compu
     setColumnForcedProps: (column: TableColumnCtx<T>) => TableColumnCtx<T>;
     setColumnRenders: (column: TableColumnCtx<T>) => TableColumnCtx<T>;
     getPropsData: (...propsKey: unknown[]) => unknown;
-    getColumnGpIndex: () => number;
+    getColumnElIndex: (children: any, child: any) => number;
     updateColumnOrder: () => void;
 };
 export default useRender;
