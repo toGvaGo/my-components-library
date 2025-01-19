@@ -6,7 +6,7 @@ import '../packages/theme-chalk/src/index.scss'
 import { h } from 'vue';
 
 const meta = {
-  title: 'button',
+  title: 'Button',
   component: GpButton,
   tags: ['autodocs'],
   argTypes: {
@@ -44,48 +44,13 @@ const meta = {
       description: 'Button label or text content',
     },
   },
-  args: {
-
-  },
   parameters: {
+    layout: 'centered',
   },
-  // decorators: [
-  //   // 👇 Defining the decorator in the preview file applies it to all stories
-  //   (_, { parameters }) => {
-  //     // 👇 Make it configurable by reading from parameters
-  //     const { pageLayout } = parameters;
-  //     switch (pageLayout) {
-  //       case 'page':
-  //         // Your page layout is probably a little more complex than this ;)
-  //         return { template: '<div class="page-layout"><story/></div>' };
-  //       case 'page-mobile':
-  //         return { template: '<div class="page-mobile-layout"><story/></div>' };
-  //       default:
-  //         // In the default case, don't apply a layout
-  //         return { template: '<story/>' };
-  //     }
-  //   },
-  // ],
 } satisfies Meta<typeof GpButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-// export const Default: Story = {
-//   args: {
-//     type: 'default',
-//   },
-//   // argTypes: {
-//   //   type: {
-//   //     options: ['primary', 'default'],
-//   //     control: { type: 'radio' },
-//   //   },
-//   //   slotContent: { control: 'text' }, // 控制 slot 内容
-//   // },
-//   render: (args) => h(GpButton, {
-//     ...args,
-//   }, 'default')
-// };
 
 const Template = (args) => ({
   components: { GpButton },

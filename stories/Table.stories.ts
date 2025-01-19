@@ -10,7 +10,7 @@ import '../packages/theme-chalk/src/index.scss'
 import { ref } from 'vue';
 
 const meta = {
-  title: 'table',
+  title: 'Table',
   component: GpTable,
   tags: ['autodocs'],
   argTypes: {

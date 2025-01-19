@@ -9,7 +9,7 @@ import '../packages/theme-chalk/src/index.scss'
 import { ref } from 'vue';
 
 const meta = {
-  title: 'tooltip',
+  title: 'Tooltip',
   component: GpTooltip,
   tags: ['autodocs'],
   argTypes: {
@@ -31,6 +31,7 @@ const meta = {
 
   },
   parameters: {
+    layout: 'centered',
   },
 } satisfies Meta<typeof GpTooltip>;
 

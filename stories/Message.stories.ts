@@ -44,6 +44,7 @@ const meta = {
         duration: 3000,
     },
     parameters: {
+        layout: 'centered',
     },
 } satisfies Meta<typeof GpMessage>;
 
@@ -73,8 +74,7 @@ MessageExample.args = {
     center: false,
     duration: 3000,
 }
-
-export const VNodeMessage = (args) => ({
+export const VirtualNodeMessage = (args) => ({
     components: { GpButton, GpMessage },
     setup() {
         const openVn = () => {
@@ -93,7 +93,7 @@ export const VNodeMessage = (args) => ({
     </GpButton>
   `,
 });
-VNodeMessage.parameters = {
+VirtualNodeMessage.parameters = {
     docs: {
         source: {
             code: `

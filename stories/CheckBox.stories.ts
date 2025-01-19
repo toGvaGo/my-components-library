@@ -7,7 +7,7 @@ import '../packages/theme-chalk/src/index.scss'
 import { ref } from 'vue';
 
 const meta = {
-    title: 'checkbox',
+    title: 'Checkbox',
     component: GpCheckbox,
     tags: ['autodocs'],
     argTypes: {
@@ -32,6 +32,7 @@ const meta = {
 
     },
     parameters: {
+        layout: 'centered',
     },
 } satisfies Meta<typeof GpCheckbox>;
 

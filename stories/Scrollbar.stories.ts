@@ -9,7 +9,7 @@ import '../packages/theme-chalk/src/index.scss'
 import { ref } from 'vue';
 
 const meta = {
-    title: 'scrollbar',
+    title: 'Scrollbar',
     component: GpScrollbar,
     tags: ['autodocs'],
     argTypes: {
