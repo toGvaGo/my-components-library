@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/toGvaGo/my-components-library/compare/v1.2.0...v1.3.0) (2025-01-19)
+
+
+### Features
+
+* 添加部署相关配置 ([597f4a2](https://github.com/toGvaGo/my-components-library/commit/597f4a2b58267805004dcfbc6fb8dafb13bc8f42))
+* 完成按钮文档 ([c361a69](https://github.com/toGvaGo/my-components-library/commit/c361a69155556306a996f9b2b16d583d571a93e0))
+* 样式和文档初尝试 ([1161492](https://github.com/toGvaGo/my-components-library/commit/1161492480a3c63c39c19748f19f1186c72ab6d0))
+* checkbox样式和文档 ([6a78d82](https://github.com/toGvaGo/my-components-library/commit/6a78d82f69c3fd46e98d6801a922e7b4eb60eb6c))
+* message样式和文档 ([9948498](https://github.com/toGvaGo/my-components-library/commit/9948498474014607ba95df004d19672cff870eea))
+* scrollbar样式和文档 ([bce7b3c](https://github.com/toGvaGo/my-components-library/commit/bce7b3c775d708ed6c11aa94d01a1be9331bd818))
+* tooltip和table样式+文档 ([ea1ebc5](https://github.com/toGvaGo/my-components-library/commit/ea1ebc5efa17f75afcb2bc47478bd83316a4451b))
+* tooltip样式和文档 ([edf32dc](https://github.com/toGvaGo/my-components-library/commit/edf32dc7726f8e2b5ac62696c127204a0a41dd39))
+
 ## [1.2.0](https://github.com/toGvaGo/my-components-library/compare/v1.1.1...v1.2.0) (2024-12-22)
 
 
