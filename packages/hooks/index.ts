@@ -13,3 +13,7 @@ export * from './use-timeout';
 export * from './use-popper';
 export * from './use-forward-ref';
 export * from './use-escape-keydown';
+export * from './use-attrs';
+export * from './use-composition';
+export * from './use-focus-controller';
+export * from './use-cursor';

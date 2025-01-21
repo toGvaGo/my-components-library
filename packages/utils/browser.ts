@@ -1,6 +1,6 @@
 import { isClient, isIOS } from '@vueuse/core'
 
-export const isFIrefox = (): boolean =>
+export const isFirefox = (): boolean =>
     isClient && /firefox/i.test(window.navigator.userAgent)
 
 export { isClient, isIOS }

@@ -1,0 +1,77 @@
+.gp-input {
+  --gp-input-inner-height: calc(var(--gp-input-height, 32px) - 2px);
+}
+.gp-input {
+  --gp-input-height: var(--gp-component-size);
+  position: relative;
+  font-size: var(--gp-font-size-base);
+  display: inline-flex;
+  width: var(--gp-input-width);
+  line-height: var(--gp-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.gp-input {
+  --gp-input-text-color: var(--gp-text-color-regular);
+  --gp-input-border: var(--gp-border);
+  --gp-input-hover-border: var(--gp-border-color-hover);
+  --gp-input-focus-border: var(--gp-color-primary);
+  --gp-input-transparent-border: 0 0 0 1px transparent inset;
+  --gp-input-border-color: var(--gp-border-color);
+  --gp-input-border-radius: var(--gp-border-radius-base);
+  --gp-input-bg-color: var(--gp-fill-color-blank);
+  --gp-input-icon-color: var(--gp-text-color-placeholder);
+  --gp-input-placeholder-color: var(--gp-text-color-placeholder);
+  --gp-input-hover-border-color: var(--gp-border-color-hover);
+  --gp-input-clear-hover-color: var(--gp-text-color-secondary);
+  --gp-input-focus-border-color: var(--gp-color-primary);
+  --gp-input-width: 100%;
+}
+
+.gp-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 11px;
+  background-color: var(--gp-input-bg-color, var(--gp-fill-color-blank));
+  background-image: none;
+  border-radius: var(--gp-input-border-radius, var(--gp-border-radius-base));
+  cursor: text;
+  transition: var(--gp-transition-box-shadow);
+  transform: translateZ(0);
+  box-shadow: 0 0 0 1px var(--gp-input-border-color, var(--gp-border-color))
+    inset;
+}
+.gp-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--gp-input-focus-border-color) inset;
+}
+.gp-input__inner {
+  width: 100%;
+  flex-grow: 1;
+  -webkit-appearance: none;
+  color: var(--gp-input-text-color, var(--gp-text-color-regular));
+  font-size: inherit;
+  height: var(--gp-input-inner-height);
+  line-height: var(--gp-input-inner-height);
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+}
+
+.gp-input.is-disabled {
+  cursor: not-allowed;
+}
+.gp-input.is-disabled .gp-input__wrapper {
+  background-color: var(--gp-disabled-bg-color);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px var(--gp-disabled-border-color) inset;
+}
+.gp-input.is-disabled .gp-input__inner {
+  color: var(--gp-disabled-text-color);
+  -webkit-text-fill-color: var(--gp-disabled-text-color);
+  cursor: not-allowed;
+}
