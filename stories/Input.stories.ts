@@ -8,7 +8,7 @@ import { h, ref } from 'vue';
 
 const meta = {
     title: 'Input',
-    component: GpButton,
+    component: GpInput,
     tags: ['autodocs'],
     argTypes: {
         disabled: {
@@ -19,7 +19,7 @@ const meta = {
     parameters: {
         layout: 'centered',
     },
-} satisfies Meta<typeof GpButton>;
+} satisfies Meta<typeof GpInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,0 +1,158 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+button,
+input {
+  overflow: visible;
+}
+.gp-radio-group {
+  margin-right: 12px;
+}
+.gp-radio-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0;
+}
+.gp-radio {
+  color: var(--gp-radio-text-color);
+  font-weight: var(--gp-radio-font-weight);
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  outline: none;
+  font-size: var(--gp-font-size-base);
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 30px;
+  height: 32px;
+}
+.gp-radio {
+  --gp-radio-font-size: var(--gp-font-size-base);
+  --gp-radio-text-color: var(--gp-text-color-regular);
+  --gp-radio-font-weight: var(--gp-font-weight-primary);
+  --gp-radio-input-height: 14px;
+  --gp-radio-input-width: 14px;
+  --gp-radio-input-border-radius: var(--gp-border-radius-circle);
+  --gp-radio-input-bg-color: var(--gp-fill-color-blank);
+  --gp-radio-input-border: var(--gp-border);
+  --gp-radio-input-border-color: var(--gp-border-color);
+  --gp-radio-input-border-color-hover: var(--gp-color-primary);
+}
+.gp-radio__input {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+}
+.gp-radio__original {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.gp-radio__input.is-checked .gp-radio__inner {
+  border-color: var(--gp-color-primary);
+  background: var(--gp-color-primary);
+}
+.gp-radio__inner {
+  border: var(--gp-radio-input-border);
+  border-radius: var(--gp-radio-input-border-radius);
+  width: var(--gp-radio-input-width);
+  height: var(--gp-radio-input-height);
+  background-color: var(--gp-radio-input-bg-color);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.gp-radio__input.is-checked .gp-radio__inner:after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.gp-radio__inner:after {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--gp-radio-input-border-radius);
+  background-color: var(--gp-color-white);
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.15s ease-in;
+}
+.gp-radio__input.is-checked + .gp-radio__label {
+  color: var(--gp-color-primary);
+}
+.gp-radio__label {
+  font-size: var(--gp-radio-font-size);
+  padding-left: 8px;
+}
+.gp-radio__input.is-disabled .gp-radio__inner {
+  background-color: var(--gp-disabled-bg-color);
+  border-color: var(--gp-disabled-border-color);
+  cursor: not-allowed;
+}
+.gp-radio__input.is-disabled + span.gp-radio__label {
+  color: var(--gp-text-color-placeholder);
+  cursor: not-allowed;
+}
+.gp-radio__input.is-disabled.is-checked .gp-radio__inner {
+  background-color: var(--gp-disabled-bg-color);
+  border-color: var(--gp-disabled-border-color);
+}
+.gp-radio__input.is-disabled.is-checked .gp-radio__inner:after {
+  background-color: var(--gp-text-color-placeholder);
+}
+
+.gp-radio.gp-radio--large {
+  height: 40px;
+}
+.gp-radio.gp-radio--large .gp-radio__inner {
+  width: 14px;
+  height: 14px;
+}
+.gp-radio.gp-radio--large .gp-radio__label {
+  font-size: 14px;
+}
+.gp-radio.gp-radio--small {
+  height: 24px;
+}
+.gp-radio.gp-radio--small .gp-radio__inner {
+  width: 12px;
+  height: 12px;
+}
+.gp-radio.gp-radio--small .gp-radio__label {
+  font-size: 12px;
+}
