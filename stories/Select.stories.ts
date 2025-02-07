@@ -72,16 +72,3 @@ export const Select = (args) => ({
 Select.args = {
 
 }
-export const DisabledState = (args) => ({
-    components: { GpInput },
-    setup() {
-        const input = ref('Please input')
-        return { args, input };
-    },
-    template: `
-    <gp-input v-bind="args" v-model="input" style="width: 240px" placeholder="Please input" />
-  `,
-})
-DisabledState.args = {
-    disabled: true
-}

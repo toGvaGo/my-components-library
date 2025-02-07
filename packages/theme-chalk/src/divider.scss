@@ -1,0 +1,42 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-divider--horizontal {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 24px 0;
+  border-top: 1px var(--gp-border-color) var(--gp-border-style);
+}
+.gp-divider {
+  position: relative;
+}
+.gp-divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: 0 8px;
+  vertical-align: middle;
+  position: relative;
+  border-left: 1px var(--gp-border-color) var(--gp-border-style);
+}
+.gp-divider__text.is-left {
+  left: 20px;
+  transform: translateY(-50%);
+}
+.gp-divider__text.is-center {
+  left: 50%;
+  transform: translate(-50%) translateY(-50%);
+}
+.gp-divider__text.is-right {
+  right: 20px;
+  transform: translateY(-50%);
+}
+.gp-divider__text {
+  position: absolute;
+  background-color: var(--gp-bg-color);
+  padding: 0 20px;
+  font-weight: 500;
+  color: var(--gp-text-color-primary);
+  font-size: 14px;
+}
