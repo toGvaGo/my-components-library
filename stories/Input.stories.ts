@@ -1,4 +1,3 @@
-import { expect, fn, userEvent, within } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import GpButton from '../packages/components/button/src/button.vue';
@@ -13,7 +12,7 @@ const meta = {
     argTypes: {
         disabled: {
             control: 'boolean',
-            description: 'Whether the button is disabled',
+            description: 'Whether the input is disabled',
         },
     },
     parameters: {

@@ -1,0 +1,87 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+.gp-tag.gp-tag--primary {
+  --gp-tag-text-color: var(--gp-color-primary);
+}
+.gp-tag.gp-tag--success {
+  --gp-tag-text-color: var(--gp-color-success);
+}
+.gp-tag.gp-tag--info {
+  --gp-tag-text-color: var(--gp-color-info);
+}
+.gp-tag.gp-tag--warning {
+  --gp-tag-text-color: var(--gp-color-warning);
+}
+.gp-tag.gp-tag--danger {
+  --gp-tag-text-color: var(--gp-color-danger);
+}
+
+.gp-tag.gp-tag--primary {
+  --gp-tag-bg-color: var(--gp-color-primary-light-9);
+  --gp-tag-border-color: var(--gp-color-primary-light-8);
+  --gp-tag-hover-color: var(--gp-color-primary);
+}
+.gp-tag.gp-tag--success {
+  --gp-tag-bg-color: var(--gp-color-success-light-9);
+  --gp-tag-border-color: var(--gp-color-success-light-8);
+  --gp-tag-hover-color: var(--gp-color-success);
+}
+.gp-tag.gp-tag--info {
+  --gp-tag-bg-color: var(--gp-color-info-light-9);
+  --gp-tag-border-color: var(--gp-color-info-light-8);
+  --gp-tag-hover-color: var(--gp-color-info);
+}
+.gp-tag.gp-tag--warning {
+  --gp-tag-bg-color: var(--gp-color-warning-light-9);
+  --gp-tag-border-color: var(--gp-color-warning-light-8);
+  --gp-tag-hover-color: var(--gp-color-warning);
+}
+.gp-tag.gp-tag--danger {
+  --gp-tag-bg-color: var(--gp-color-danger-light-9);
+  --gp-tag-border-color: var(--gp-color-danger-light-8);
+  --gp-tag-hover-color: var(--gp-color-danger);
+}
+
+.gp-tag {
+  --gp-tag-font-size: 12px;
+  --gp-tag-border-radius: 4px;
+  --gp-tag-border-radius-rounded: 9999px;
+}
+
+.gp-tag {
+  background-color: var(--gp-tag-bg-color);
+  border-color: var(--gp-tag-border-color);
+  color: var(--gp-tag-text-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 24px;
+  padding: 0 9px;
+  font-size: var(--gp-tag-font-size);
+  line-height: 1;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--gp-tag-border-radius);
+  box-sizing: border-box;
+  white-space: nowrap;
+  --gp-icon-size: 14px;
+  --gp-tag-bg-color: var(--gp-color-primary-light-9);
+  --gp-tag-border-color: var(--gp-color-primary-light-8);
+  --gp-tag-hover-color: var(--gp-color-primary);
+}
+
+.gp-tag--large {
+  padding: 0 11px;
+  height: 32px;
+  //   --gp-icon-size: 16px;
+}
+.gp-tag--small {
+  padding: 0 7px;
+  height: 20px;
+  //   --gp-icon-size: 12px;
+}
+.gp-tag.is-round {
+  border-radius: var(--gp-tag-border-radius-rounded);
+}

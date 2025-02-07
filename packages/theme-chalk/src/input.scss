@@ -1,3 +1,6 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
 .gp-input {
   --gp-input-inner-height: calc(var(--gp-input-height, 32px) - 2px);
 }

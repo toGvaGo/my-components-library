@@ -1,0 +1,272 @@
+@use 'sass:color'; // 引入 Sass 内置的 color 模块
+@use 'variables' as *; // 引入变量文件，并命名为 *，以便可以直接使用变量名
+
+p,
+ol,
+ul {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+.gp-select {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: var(--gp-select-width);
+}
+.gp-select {
+  --gp-select-border-color-hover: var(--gp-border-color-hover);
+  --gp-select-disabled-color: var(--gp-disabled-text-color);
+  --gp-select-disabled-border: var(--gp-disabled-border-color);
+  --gp-select-font-size: var(--gp-font-size-base);
+  --gp-select-close-hover-color: var(--gp-text-color-secondary);
+  --gp-select-input-color: var(--gp-text-color-placeholder);
+  --gp-select-multiple-input-color: var(--gp-text-color-regular);
+  --gp-select-input-focus-border-color: var(--gp-color-primary);
+  --gp-select-input-font-size: 14px;
+  --gp-select-width: 100%;
+}
+.gp-select__wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  padding: 4px 12px;
+  gap: 6px;
+  min-height: 32px;
+  line-height: 24px;
+  border-radius: var(--gp-border-radius-base);
+  background-color: var(--gp-fill-color-blank);
+  transition: var(--gp-transition-duration);
+  transform: translateZ(0);
+  box-shadow: 0 0 0 1px var(--gp-border-color) inset;
+}
+.gp-select__selection {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 6px;
+}
+.gp-select--large .gp-select__selection {
+  gap: 6px;
+}
+.gp-select__input-wrapper.is-hidden {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.gp-select__input-wrapper {
+  flex: 1;
+}
+.gp-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px var(--gp-color-primary) inset;
+}
+.gp-select__selected-item {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.gp-select__input {
+  border: none;
+  outline: none;
+  padding: 0;
+  color: var(--gp-select-multiple-input-color);
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 24px;
+  width: 100%;
+  background-color: transparent;
+}
+.gp-select__placeholder.is-transparent {
+  -webkit-user-select: none;
+  user-select: none;
+  color: var(--gp-text-color-placeholder);
+}
+
+.gp-select__wrapper.is-hovering:not(.is-focused) {
+  box-shadow: 0 0 0 1px var(--gp-border-color-hover) inset;
+}
+.gp-select__selected-item {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.gp-select__placeholder {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--gp-input-text-color, var(--gp-text-color-regular));
+}
+.gp-select--small .gp-select__wrapper {
+  gap: 4px;
+  padding: 2px 8px;
+  min-height: 24px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.gp-select--small .gp-select__input {
+  height: 20px;
+}
+.gp-select--large .gp-select__wrapper {
+  gap: 6px;
+  padding: 8px 16px;
+  min-height: 40px;
+  line-height: 24px;
+  font-size: 14px;
+}
+.gp-select--large .gp-select__input {
+  height: 24px;
+}
+.gp-select__wrapper.is-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: var(--gp-fill-color-light);
+  color: var(--gp-text-color-placeholder);
+  box-shadow: 0 0 0 1px var(--gp-select-disabled-border) inset;
+}
+.gp-select-dropdown__wrap {
+  max-height: 274px;
+}
+.gp-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+.gp-scrollbar__wrap {
+  overflow: auto;
+  height: 100%;
+}
+.gp-select-dropdown__list {
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.gp-select-dropdown__item.is-selected {
+  color: var(--gp-color-primary);
+  font-weight: 700;
+}
+.gp-select-dropdown__item.is-hovering {
+  background-color: var(--gp-fill-color-light);
+}
+.is-selected {
+  color: #1989fa;
+}
+.gp-select-dropdown__item {
+  font-size: var(--gp-font-size-base);
+  padding: 0 32px 0 20px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--gp-text-color-regular);
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+// popper
+.gp-popper.is-pure {
+  padding: 0;
+}
+.gp-popper.is-light {
+  background: var(--gp-bg-color-overlay);
+  border: 1px solid var(--gp-border-color-light);
+}
+.gp-select__popper.gp-popper {
+  background: var(--gp-bg-color-overlay);
+  border: 1px solid var(--gp-border-color-light);
+  box-shadow: var(--gp-box-shadow-light);
+}
+.gp-popper {
+  position: absolute;
+  border-radius: var(--gp-popper-border-radius);
+  padding: 5px 11px;
+  z-index: 2000;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 10px;
+  overflow-wrap: break-word;
+  visibility: visible;
+}
+.gp-popper {
+  --gp-popper-border-radius: var(--gp-popover-border-radius, 4px);
+}
+.gp-popper[data-popper-placement^='bottom'] > .gp-popper__arrow {
+  top: -5px;
+}
+.gp-popper__arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+.gp-popper[data-popper-placement^='bottom'] > .gp-popper__arrow:before {
+  border-bottom-color: transparent !important;
+  border-right-color: transparent !important;
+}
+.gp-popper[data-popper-placement^='bottom'] > .gp-popper__arrow:before {
+  border-top-left-radius: 2px;
+}
+.gp-popper.is-light > .gp-popper__arrow:before {
+  border: 1px solid var(--gp-border-color-light);
+  background: var(--gp-bg-color-overlay);
+  right: 0;
+}
+.gp-select__popper.gp-popper .gp-popper__arrow:before {
+  border: 1px solid var(--gp-border-color-light);
+}
+.gp-popper__arrow:before {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+  content: ' ';
+  transform: rotate(45deg);
+  background: var(--gp-text-color-primary);
+  box-sizing: border-box;
+}
+
+.gp-zoom-in-top-enter-active,
+.gp-zoom-in-top-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: getCssVar('transition-md-fade');
+  transform-origin: center top;
+
+  &[data-popper-placement^='top'] {
+    transform-origin: center bottom;
+  }
+}
+.gp-zoom-in-top-enter-from,
+.gp-zoom-in-top-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.gp-zoom-in-bottom-enter-active,
+.gp-zoom-in-bottom-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: getCssVar('transition-md-fade');
+  transform-origin: center bottom;
+}
+.gp-zoom-in-bottom-enter-from,
+.gp-zoom-in-bottom-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
+}
